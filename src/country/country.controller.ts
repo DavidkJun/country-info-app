@@ -9,4 +9,9 @@ export class CountryController {
   getAvailableCountries() {
     return this.countryService.getCountries();
   }
+
+  @Get(':COUNTRY_CODE')
+  getCountryInfo(@Param('COUNTRY_CODE') countryCode: string) {
+    return this.countryService.getCountryInfo(countryCode);
+  }
 }
